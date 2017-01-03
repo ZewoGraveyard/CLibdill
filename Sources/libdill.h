@@ -226,6 +226,9 @@ DILL_EXPORT __attribute__((noinline)) void dill_epilogue(void);
 
 #define go(fn) go_mem(fn, NULL, 0)
 
+DILL_EXPORT int co(void **ptr, size_t len,
+    void *fn, const char *file, int line,
+    void (*routine)(void *));
 DILL_EXPORT int yield(void);
 DILL_EXPORT int msleep(int64_t deadline);
 DILL_EXPORT void fdclean(int fd);
